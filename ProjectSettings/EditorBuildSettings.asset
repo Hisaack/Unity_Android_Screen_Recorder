@@ -6,5 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Recorder.unity
-    guid: 6e341bb5a799e2b42a8bb7ba7ac5f33a
+    path: Assets/Scenes/AndroidUtilsWithVuforia.unity
+    guid: 176ab179adba1eb468ccc761a92bc670

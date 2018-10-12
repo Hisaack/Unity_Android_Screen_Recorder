@@ -7,8 +7,15 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject startRecordbtn, stopRecordBtn, galleryBtn;
     private void Start()
     {
-        if (!AndroidUtils.IsPermitted(AndroidPermission.ACCESS_FINE_LOCATION))//test request permission
-            AndroidUtils.RequestPermission(AndroidPermission.ACCESS_FINE_LOCATION);
+        if (!AndroidUtils.IsPermitted(AndroidPermission.CAMERA))
+        {//test request permission
+            AndroidUtils.RequestPermission(AndroidPermission.CAMERA, () =>
+            {
+                Vuforia.VuforiaRuntime.Instance.InitVuforia();
+            });
+        }
+        else
+            Vuforia.VuforiaRuntime.Instance.InitVuforia();
         androidUtils = FindObjectOfType<AndroidUtils>();
     }
     public void OnClickStartRecord()
